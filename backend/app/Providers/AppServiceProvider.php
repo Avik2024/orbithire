@@ -2,21 +2,17 @@
 
 namespace App\Providers;
 
+use App\Repositories\Contracts\JobRepositoryInterface;
+use App\Repositories\JobRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
     public function register(): void
     {
-        //
+        $this->app->bind(JobRepositoryInterface::class, JobRepository::class);
     }
 
-    /**
-     * Bootstrap any application services.
-     */
     public function boot(): void
     {
         //
