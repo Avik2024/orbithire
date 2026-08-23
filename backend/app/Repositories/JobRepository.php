@@ -4,11 +4,11 @@ namespace App\Repositories;
 
 use App\Models\JobPosting;
 use App\Repositories\Contracts\JobRepositoryInterface;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class JobRepository implements JobRepositoryInterface
 {
-    public function all(array $filters = []): Collection
+    public function all(array $filters = []): LengthAwarePaginator
     {
         $query = JobPosting::query()->where('status', 'active');
 
@@ -24,7 +24,7 @@ class JobRepository implements JobRepositoryInterface
             $query->where('title', 'ilike', '%' . $filters['search'] . '%');
         }
 
-        return $query->latest()->get();
+        return $query->latest()->paginate(10);
     }
 
     public function find(int $id): ?JobPosting

@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Models\JobPosting;
 use App\Repositories\Contracts\JobRepositoryInterface;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
@@ -14,7 +14,7 @@ class JobService
         protected JobRepositoryInterface $jobRepository
     ) {}
 
-    public function listJobs(array $filters = []): Collection
+    public function listJobs(array $filters = []): LengthAwarePaginator
     {
         return $this->jobRepository->all($filters);
     }

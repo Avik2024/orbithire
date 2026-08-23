@@ -3,11 +3,11 @@
 namespace App\Repositories\Contracts;
 
 use App\Models\JobPosting;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 interface JobRepositoryInterface
 {
-    public function all(array $filters = []): Collection;
+    public function all(array $filters = []): LengthAwarePaginator;
     public function find(int $id): ?JobPosting;
     public function create(array $data): JobPosting;
     public function update(JobPosting $job, array $data): JobPosting;
