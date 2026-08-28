@@ -93,7 +93,7 @@ const jobs: Job[] = [
   },
 ];
 
-const companies = ["Vertex Labs", "Axiom AI", "Pulse", "Northstar", "BrightPay", "Sentinel"];
+const companies = ["Vertex Labs", "Axiom AI", "Pulse Commerce", "Northstar", "BrightPay", "Sentinel One"];
 
 function Icon({ name, className = "h-5 w-5" }: { name: string; className?: string }) {
   const common = {
@@ -118,6 +118,8 @@ function Icon({ name, className = "h-5 w-5" }: { name: string; className?: strin
     filter: <><path d="M4 6h16M7 12h10M10 18h4" {...common} /></>,
     user: <><circle cx="12" cy="8" r="4" {...common} /><path d="M4 21c.7-4 3.3-6 8-6s7.3 2 8 6" {...common} /></>,
   };
+
+  if (!paths[name]) return null;
 
   return <svg viewBox="0 0 24 24" aria-hidden className={className}>{paths[name]}</svg>;
 }
@@ -152,7 +154,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#f6f8fb] text-slate-950">
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
-        <div className="mx-auto flex h-18 max-w-7xl items-center gap-6 px-5 lg:px-8">
+        <div className="mx-auto flex h-16 max-w-7xl items-center gap-6 px-5 lg:px-8">
           <a href="#" className="flex shrink-0 items-center gap-2.5" aria-label="Optihire home">
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-slate-950 text-white shadow-lg shadow-slate-950/10">
               <span className="text-xl font-black tracking-[-0.08em]">O<span className="text-cyan-400">.</span></span>
@@ -177,7 +179,7 @@ export default function Home() {
       <main>
         <section className="relative overflow-hidden border-b border-slate-200 bg-white">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(34,211,238,0.12),transparent_28%),radial-gradient(circle_at_80%_20%,rgba(99,102,241,0.10),transparent_30%)]" />
-          <div className="relative mx-auto grid max-w-7xl gap-12 px-5 pb-18 pt-14 lg:grid-cols-[1.15fr_.85fr] lg:px-8 lg:pb-24 lg:pt-20">
+          <div className="relative mx-auto grid max-w-7xl gap-12 px-5 pb-20 pt-14 lg:grid-cols-[1.15fr_.85fr] lg:px-8 lg:pb-24 lg:pt-20">
             <div className="max-w-3xl self-center">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-3.5 py-2 text-xs font-bold text-cyan-800">
                 <span className="h-2 w-2 rounded-full bg-cyan-500" /> 18,492 new roles this week
@@ -191,15 +193,15 @@ export default function Home() {
 
               <div className="mt-9 rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_20px_70px_-30px_rgba(15,23,42,.28)] sm:p-2.5">
                 <div className="flex flex-col gap-2 lg:flex-row">
-                  <label className="flex min-h-13 flex-1 items-center gap-3 rounded-xl bg-slate-50 px-4 focus-within:ring-2 focus-within:ring-cyan-400/30">
+                  <label className="flex min-h-[52px] flex-1 items-center gap-3 rounded-xl bg-slate-50 px-4 focus-within:ring-2 focus-within:ring-cyan-400/30">
                     <Icon name="search" className="h-5 w-5 shrink-0 text-slate-400" />
                     <input value={query} onChange={(e) => setQuery(e.target.value)} className="w-full bg-transparent text-sm font-medium outline-none placeholder:text-slate-400" placeholder="Job title, skills, company" />
                   </label>
-                  <label className="flex min-h-13 flex-1 items-center gap-3 rounded-xl bg-slate-50 px-4 focus-within:ring-2 focus-within:ring-cyan-400/30">
+                  <label className="flex min-h-[52px] flex-1 items-center gap-3 rounded-xl bg-slate-50 px-4 focus-within:ring-2 focus-within:ring-cyan-400/30">
                     <Icon name="pin" className="h-5 w-5 shrink-0 text-slate-400" />
                     <input value={location} onChange={(e) => setLocation(e.target.value)} className="w-full bg-transparent text-sm font-medium outline-none placeholder:text-slate-400" placeholder="City, country or remote" />
                   </label>
-                  <button className="min-h-13 rounded-xl bg-slate-950 px-7 text-sm font-bold text-white transition hover:bg-slate-800">Search jobs</button>
+                  <button className="min-h-[52px] rounded-xl bg-slate-950 px-7 text-sm font-bold text-white transition hover:bg-slate-800">Search jobs</button>
                 </div>
               </div>
 
@@ -272,7 +274,7 @@ export default function Home() {
               <article key={job.id} className="group relative rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-xl hover:shadow-slate-900/5">
                 {job.featured && <span className="absolute right-5 top-5 rounded-full bg-amber-50 px-2.5 py-1 text-[10px] font-black uppercase tracking-wider text-amber-700">Featured</span>}
                 <div className="flex gap-4">
-                  <div className="grid h-13 w-13 shrink-0 place-items-center rounded-2xl bg-slate-950 text-sm font-black text-white shadow-sm">{job.logo}</div>
+                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-slate-950 text-sm font-black text-white shadow-sm">{job.logo}</div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-start justify-between gap-3 pr-16">
                       <div>
@@ -319,7 +321,7 @@ export default function Home() {
                 {[['98%', 'match confidence'], ['4.7×', 'more relevant roles'], ['12 min', 'to build profile']].map(([value, label]) => <div key={label} className="rounded-2xl border border-white/10 bg-white/5 p-4"><p className="text-2xl font-black">{value}</p><p className="mt-1 text-xs font-semibold text-slate-400">{label}</p></div>)}
               </div>
             </div>
-            <button className="inline-flex h-13 items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-black text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-50">Build my profile <Icon name="arrow" className="h-4 w-4" /></button>
+            <button className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-black text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-50">Build my profile <Icon name="arrow" className="h-4 w-4" /></button>
           </div>
         </section>
 
