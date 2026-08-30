@@ -2,6 +2,7 @@
 
 import { useMemo, useState, useEffect, Suspense } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
 
 type Job = {
   id: number;
@@ -279,9 +280,12 @@ function HomeContent() {
           </nav>
 
           <div className="ml-auto flex items-center gap-2">
-            <button className="hidden rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-50 sm:block">
+            <Link
+            href="/signin"
+            className="hidden rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-50 sm:block"
+            >
               Sign in
-            </button>
+            </Link>
             <button
               onClick={() => setIsPostJobOpen(true)}
               className="rounded-xl bg-slate-950 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-slate-800"
