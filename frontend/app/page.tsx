@@ -286,12 +286,12 @@ function HomeContent() {
             >
               Sign in
             </Link>
-            <button
-              onClick={() => setIsPostJobOpen(true)}
+            <Link
+              href="/post-job"
               className="rounded-xl bg-slate-950 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-slate-800"
             >
               Post a job
-            </button>
+            </Link>
             <button className="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 text-slate-700 md:hidden" aria-label="Open menu">
               <Icon name="menu" />
             </button>
