@@ -607,19 +607,91 @@ function HomeContent() {
       </main>
 
       {/* FOOTER */}
-      <footer className="border-t border-slate-200 bg-slate-950 py-12 text-slate-400">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-            <div className="flex items-center gap-2.5">
-              <span className="grid h-8 w-8 place-items-center rounded-lg bg-white text-slate-950">
-                <span className="text-base font-black tracking-tighter">O<span className="text-cyan-500">.</span></span>
-              </span>
-              <span className="text-lg font-bold text-white">orbithire</span>
-            </div>
-            <p className="text-xs font-medium">© 2026 Orbithire Inc. All rights reserved.</p>
-          </div>
+     <footer className="border-t border-slate-800 bg-slate-950 pt-16 pb-12 text-slate-400">
+  <div className="mx-auto max-w-7xl px-5 lg:px-8">
+    {/* TOP ROW: Brand, Quick Links, Newsletter */}
+    <div className="grid grid-cols-1 gap-10 pb-12 border-b border-slate-800/80 md:grid-cols-2 lg:grid-cols-5">
+      
+      {/* Brand & Mission Column */}
+      <div className="lg:col-span-2 space-y-4">
+        <div className="flex items-center gap-2.5">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-white text-slate-950 shadow-md">
+            <span className="text-lg font-black tracking-tighter">O<span className="text-cyan-500">.</span></span>
+          </span>
+          <span className="text-xl font-extrabold tracking-tight text-white">orbithire</span>
         </div>
-      </footer>
+        <p className="max-w-sm text-xs leading-relaxed text-slate-400 font-medium">
+          Empowering engineers, researchers, and tech leaders to find high-impact roles with complete compensation transparency.
+        </p>
+        
+        {/* Real-time Status Badge */}
+        <div className="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/80 px-3 py-1.5 text-[11px] font-semibold text-slate-300">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          All Systems Operational
+        </div>
+      </div>
+
+      {/* Column 1: Candidates */}
+      <div className="space-y-3">
+        <h4 className="text-xs font-bold uppercase tracking-wider text-white">For Candidates</h4>
+        <ul className="space-y-2 text-xs font-medium">
+          <li><a href="#jobs" className="transition hover:text-cyan-400">Explore Remote Jobs</a></li>
+          <li><a href="#jobs" className="transition hover:text-cyan-400">Go / Backend Roles</a></li>
+          <li><a href="#jobs" className="transition hover:text-cyan-400">React & Frontend Roles</a></li>
+          <li><a href="#salary" className="transition hover:text-cyan-400">Salary Calculator</a></li>
+          <li><a href="#" className="transition hover:text-cyan-400">Career Insights</a></li>
+        </ul>
+      </div>
+
+      {/* Column 2: Employers */}
+      <div className="space-y-3">
+        <h4 className="text-xs font-bold uppercase tracking-wider text-white">For Employers</h4>
+        <ul className="space-y-2 text-xs font-medium">
+          <li><a href="/post-job" className="transition hover:text-cyan-400">Post a Job Role</a></li>
+          <li><a href="#" className="transition hover:text-cyan-400">Pricing Plans</a></li>
+          <li><a href="#" className="transition hover:text-cyan-400">Talent Search</a></li>
+          <li><a href="#" className="transition hover:text-cyan-400">Hiring Guide</a></li>
+        </ul>
+      </div>
+
+      {/* Column 3: Newsletter */}
+      <div className="space-y-3">
+        <h4 className="text-xs font-bold uppercase tracking-wider text-white">Stay Updated</h4>
+        <p className="text-xs text-slate-400">Get weekly curated developer roles delivered directly to your inbox.</p>
+        <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-2 sm:flex-row lg:flex-col">
+          <input
+            type="email"
+            placeholder="dev@domain.com"
+            className="w-full rounded-xl border border-slate-800 bg-slate-900 px-3.5 py-2 text-xs text-white placeholder-slate-500 outline-none transition focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
+          />
+          <button
+            type="submit"
+            className="rounded-xl bg-cyan-400 px-4 py-2 text-xs font-extrabold text-slate-950 transition hover:bg-cyan-300 active:scale-95 shrink-0"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    {/* BOTTOM ROW: Copyright & Legal */}
+    <div className="mt-8 flex flex-col items-center justify-between gap-4 sm:flex-row text-xs font-medium text-slate-500">
+      <p>© {new Date().getFullYear()} OrbitHire Technologies Inc. All rights reserved.</p>
+      
+      <div className="flex flex-wrap items-center gap-6">
+        <a href="#" className="transition hover:text-slate-300">Privacy Policy</a>
+        <a href="#" className="transition hover:text-slate-300">Terms of Service</a>
+        <a href="#" className="transition hover:text-slate-300">Cookie Settings</a>
+        <a href="https://github.com" target="_blank" rel="noreferrer" className="transition hover:text-cyan-400">GitHub</a>
+        <a href="https://twitter.com" target="_blank" rel="noreferrer" className="transition hover:text-cyan-400">X / Twitter</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
       {/* JOB DETAIL MODAL */}
       {selectedJob && (
