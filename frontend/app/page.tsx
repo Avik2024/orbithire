@@ -286,12 +286,12 @@ function HomeContent() {
             >
               Sign in
             </Link>
-            <Link
-              href="/post-job"
+            <button
+              onClick={() => setIsPostJobOpen(true)}
               className="rounded-xl bg-slate-950 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-slate-800"
             >
               Post a job
-            </Link>
+            </button>
             <button className="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 text-slate-700 md:hidden" aria-label="Open menu">
               <Icon name="menu" />
             </button>
@@ -546,9 +546,12 @@ function HomeContent() {
                 ))}
               </div>
             </div>
-            <button className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-black text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-50">
+            <Link
+              href="/build-profile"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-black text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-50"
+            >
               Build my profile <Icon name="arrow" className="h-4 w-4" />
-            </button>
+            </Link>
           </div>
         </section>
 
@@ -583,7 +586,12 @@ function HomeContent() {
               <div className="mb-4 text-sm font-bold text-blue-600">SALARY INSIGHTS</div>
               <h2 className="text-3xl font-black tracking-tight sm:text-4xl">Know your market value.</h2>
               <p className="mt-4 max-w-xl text-slate-600">Compare compensation by role, seniority, location, and company type before you negotiate your next offer.</p>
-              <button className="mt-7 rounded-xl bg-slate-950 px-5 py-3 text-sm font-black text-white">Explore salary data</button>
+              <Link
+                href="/salary-insights"
+                className="mt-7 inline-block rounded-xl bg-slate-950 px-5 py-3 text-sm font-black text-white transition hover:bg-blue-600"
+              >
+                Explore salary data
+              </Link>
             </div>
             <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
               <div className="flex items-end justify-between">
@@ -607,167 +615,87 @@ function HomeContent() {
       </main>
 
       {/* FOOTER */}
-     <footer className="border-t border-slate-800 bg-slate-950 pt-16 pb-12 text-slate-400">
-  <div className="mx-auto max-w-7xl px-5 lg:px-8">
-    {/* TOP ROW: Brand, Quick Links, Newsletter */}
-    <div className="grid grid-cols-1 gap-10 pb-12 border-b border-slate-800/80 md:grid-cols-2 lg:grid-cols-5">
-      
-      {/* Brand & Mission Column */}
-      <div className="lg:col-span-2 space-y-4">
-        <div className="flex items-center gap-2.5">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-white text-slate-950 shadow-md">
-            <span className="text-lg font-black tracking-tighter">O<span className="text-cyan-500">.</span></span>
-          </span>
-          <span className="text-xl font-extrabold tracking-tight text-white">orbithire</span>
+      <footer className="border-t border-slate-200 bg-white text-xs font-semibold text-slate-500">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row lg:px-8">
+          <p>© {new Date().getFullYear()} OrbitHire. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a href="#" className="hover:text-slate-950">Privacy Policy</a>
+            <a href="#" className="hover:text-slate-950">Terms of Service</a>
+            <a href="#" className="hover:text-slate-950">Cookies</a>
+          </div>
         </div>
-        <p className="max-w-sm text-xs leading-relaxed text-slate-400 font-medium">
-          Empowering engineers, researchers, and tech leaders to find high-impact roles with complete compensation transparency.
-        </p>
-        
-        {/* Real-time Status Badge */}
-        <div className="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/80 px-3 py-1.5 text-[11px] font-semibold text-slate-300">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          All Systems Operational
-        </div>
-      </div>
-
-      {/* Column 1: Candidates */}
-      <div className="space-y-3">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-white">For Candidates</h4>
-        <ul className="space-y-2 text-xs font-medium">
-          <li><a href="#jobs" className="transition hover:text-cyan-400">Explore Remote Jobs</a></li>
-          <li><a href="#jobs" className="transition hover:text-cyan-400">Go / Backend Roles</a></li>
-          <li><a href="#jobs" className="transition hover:text-cyan-400">React & Frontend Roles</a></li>
-          <li><a href="#salary" className="transition hover:text-cyan-400">Salary Calculator</a></li>
-          <li><a href="#" className="transition hover:text-cyan-400">Career Insights</a></li>
-        </ul>
-      </div>
-
-      {/* Column 2: Employers */}
-      <div className="space-y-3">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-white">For Employers</h4>
-        <ul className="space-y-2 text-xs font-medium">
-          <li><a href="/post-job" className="transition hover:text-cyan-400">Post a Job Role</a></li>
-          <li><a href="#" className="transition hover:text-cyan-400">Pricing Plans</a></li>
-          <li><a href="#" className="transition hover:text-cyan-400">Talent Search</a></li>
-          <li><a href="#" className="transition hover:text-cyan-400">Hiring Guide</a></li>
-        </ul>
-      </div>
-
-      {/* Column 3: Newsletter */}
-      <div className="space-y-3">
-        <h4 className="text-xs font-bold uppercase tracking-wider text-white">Stay Updated</h4>
-        <p className="text-xs text-slate-400">Get weekly curated developer roles delivered directly to your inbox.</p>
-        <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-2 sm:flex-row lg:flex-col">
-          <input
-            type="email"
-            placeholder="dev@domain.com"
-            className="w-full rounded-xl border border-slate-800 bg-slate-900 px-3.5 py-2 text-xs text-white placeholder-slate-500 outline-none transition focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500"
-          />
-          <button
-            type="submit"
-            className="rounded-xl bg-cyan-400 px-4 py-2 text-xs font-extrabold text-slate-950 transition hover:bg-cyan-300 active:scale-95 shrink-0"
-          >
-            Subscribe
-          </button>
-        </form>
-      </div>
-
-    </div>
-
-    {/* BOTTOM ROW: Copyright & Legal */}
-    <div className="mt-8 flex flex-col items-center justify-between gap-4 sm:flex-row text-xs font-medium text-slate-500">
-      <p>© {new Date().getFullYear()} OrbitHire Technologies Inc. All rights reserved.</p>
-      
-      <div className="flex flex-wrap items-center gap-6">
-        <a href="#" className="transition hover:text-slate-300">Privacy Policy</a>
-        <a href="#" className="transition hover:text-slate-300">Terms of Service</a>
-        <a href="#" className="transition hover:text-slate-300">Cookie Settings</a>
-        <a href="https://github.com" target="_blank" rel="noreferrer" className="transition hover:text-cyan-400">GitHub</a>
-        <a href="https://twitter.com" target="_blank" rel="noreferrer" className="transition hover:text-cyan-400">X / Twitter</a>
-      </div>
-    </div>
-  </div>
-</footer>
+      </footer>
 
       {/* JOB DETAIL MODAL */}
       {selectedJob && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
-          <div className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm" onClick={() => setSelectedJob(null)} />
-          <div className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-white p-6 shadow-2xl sm:p-8">
-            <button
-              onClick={() => setSelectedJob(null)}
-              className="absolute right-5 top-5 grid h-9 w-9 place-items-center rounded-full border border-slate-200 text-slate-500 transition hover:bg-slate-100"
-            >
-              <Icon name="close" className="h-5 w-5" />
-            </button>
-
-            <div className="flex items-center gap-4">
-              <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-slate-950 text-base font-black text-white shadow-md">
-                {selectedJob.logo}
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-sm">
+          <div className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-white p-6 shadow-2xl sm:p-8">
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-slate-950 text-base font-black text-white">
+                  {selectedJob.logo}
+                </div>
+                <div>
+                  <h3 className="text-xl font-extrabold text-slate-950">{selectedJob.title}</h3>
+                  <p className="text-sm font-semibold text-slate-500">{selectedJob.company}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-black text-slate-950">{selectedJob.title}</h3>
-                <p className="text-sm font-bold text-slate-500">{selectedJob.company} · {selectedJob.location}</p>
-              </div>
-            </div>
-
-            <div className="mt-6 flex flex-wrap gap-4 border-y border-slate-100 py-4 text-sm font-semibold text-slate-600">
-              <div><span className="text-slate-400">Salary:</span> {selectedJob.salary}</div>
-              <div><span className="text-slate-400">Type:</span> {selectedJob.type}</div>
-              <div><span className="text-slate-400">Level:</span> {selectedJob.level}</div>
-            </div>
-
-            <div className="mt-6 space-y-6">
-              <div>
-                <h4 className="text-xs font-black uppercase tracking-wider text-slate-400">About the Role</h4>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600">{selectedJob.description}</p>
-              </div>
-
-              <div>
-                <h4 className="text-xs font-black uppercase tracking-wider text-slate-400">Responsibilities</h4>
-                <ul className="mt-2 space-y-2 text-sm text-slate-600">
-                  {selectedJob.responsibilities.map((resp, i) => (
-                    <li key={i} className="flex gap-2">
-                      <span className="text-cyan-500 font-bold">•</span>
-                      <span>{resp}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-xs font-black uppercase tracking-wider text-slate-400">Requirements</h4>
-                <ul className="mt-2 space-y-2 text-sm text-slate-600">
-                  {selectedJob.requirements.map((req, i) => (
-                    <li key={i} className="flex gap-2">
-                      <span className="text-cyan-500 font-bold">•</span>
-                      <span>{req}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="mt-8 flex items-center justify-end gap-3 border-t border-slate-100 pt-6">
               <button
                 onClick={() => setSelectedJob(null)}
-                className="rounded-xl border border-slate-200 px-5 py-2.5 text-sm font-bold text-slate-600 transition hover:bg-slate-50"
+                className="grid h-9 w-9 place-items-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200"
               >
-                Close
+                <Icon name="close" className="h-5 w-5" />
               </button>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-4 text-xs font-semibold text-slate-600">
+              <span className="rounded-lg bg-slate-100 px-3 py-1.5">{selectedJob.location}</span>
+              <span className="rounded-lg bg-slate-100 px-3 py-1.5">{selectedJob.type}</span>
+              <span className="rounded-lg bg-slate-100 px-3 py-1.5">{selectedJob.salary}</span>
+            </div>
+
+            <div className="mt-6 space-y-6 text-sm">
+              <div>
+                <h4 className="font-bold text-slate-950">Description</h4>
+                <p className="mt-2 leading-relaxed text-slate-600">{selectedJob.description}</p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-950">Responsibilities</h4>
+                <ul className="mt-2 list-disc space-y-1.5 pl-5 text-slate-600">
+                  {selectedJob.responsibilities.map((resp, i) => (
+                    <li key={i}>{resp}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-slate-950">Requirements</h4>
+                <ul className="mt-2 list-disc space-y-1.5 pl-5 text-slate-600">
+                  {selectedJob.requirements.map((req, i) => (
+                    <li key={i}>{req}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-8 flex gap-3 border-t border-slate-100 pt-6">
               <button
                 onClick={() => handleApply(selectedJob.id)}
-                className={`rounded-xl px-6 py-2.5 text-sm font-bold text-white transition ${
+                disabled={appliedJobs.includes(selectedJob.id)}
+                className={`flex-1 rounded-xl py-3 text-sm font-bold text-white transition ${
                   appliedJobs.includes(selectedJob.id)
-                    ? "bg-emerald-600 cursor-default"
+                    ? "bg-emerald-600"
                     : "bg-slate-950 hover:bg-blue-600"
                 }`}
               >
-                {appliedJobs.includes(selectedJob.id) ? "Applied ✓" : "Apply Now"}
+                {appliedJobs.includes(selectedJob.id) ? "Applied ✓" : "Apply now"}
+              </button>
+              <button
+                onClick={(e) => toggleSaved(selectedJob.id, e)}
+                className="rounded-xl border border-slate-200 px-4 text-slate-700 hover:bg-slate-50"
+              >
+                <Icon name="heart" className={saved.includes(selectedJob.id) ? "fill-cyan-500 text-cyan-500" : ""} />
               </button>
             </div>
           </div>
@@ -776,55 +704,37 @@ function HomeContent() {
 
       {/* POST A JOB MODAL */}
       {isPostJobOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
-          <div className="fixed inset-0 bg-slate-950/60 backdrop-blur-sm" onClick={() => setIsPostJobOpen(false)} />
-          <div className="relative max-h-[90vh] w-full max-w-xl overflow-y-auto rounded-3xl bg-white p-6 shadow-2xl sm:p-8">
-            <button
-              onClick={() => setIsPostJobOpen(false)}
-              className="absolute right-5 top-5 grid h-9 w-9 place-items-center rounded-full border border-slate-200 text-slate-500 transition hover:bg-slate-100"
-            >
-              <Icon name="close" className="h-5 w-5" />
-            </button>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-sm">
+          <div className="w-full max-w-lg rounded-3xl bg-white p-6 shadow-2xl sm:p-8">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xl font-extrabold text-slate-950">Post a New Job</h3>
+              <button
+                onClick={() => setIsPostJobOpen(false)}
+                className="grid h-9 w-9 place-items-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200"
+              >
+                <Icon name="close" className="h-5 w-5" />
+              </button>
+            </div>
 
-            <h3 className="text-2xl font-black text-slate-950">Post a new position</h3>
-            <p className="mt-1 text-sm text-slate-500">Reach tech talent across the globe on OrbitHire.</p>
-
-            <form onSubmit={(e) => { e.preventDefault(); setIsPostJobOpen(false); }} className="mt-6 space-y-4">
+            <form onSubmit={(e) => { e.preventDefault(); setIsPostJobOpen(false); }} className="mt-6 space-y-4 text-sm">
               <div>
-                <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-slate-700">Job Title</label>
-                <input required type="text" placeholder="e.g. Senior Backend Engineer" className="w-full rounded-xl border border-slate-200 p-3 text-sm outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20" />
-              </div>
-              <div>
-                <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-slate-700">Company Name</label>
-                <input required type="text" placeholder="e.g. Acme Corp" className="w-full rounded-xl border border-slate-200 p-3 text-sm outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20" />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-slate-700">Location</label>
-                  <input required type="text" placeholder="e.g. Remote / London" className="w-full rounded-xl border border-slate-200 p-3 text-sm outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20" />
-                </div>
-                <div>
-                  <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-slate-700">Salary Range</label>
-                  <input required type="text" placeholder="e.g. $120k–$150k" className="w-full rounded-xl border border-slate-200 p-3 text-sm outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20" />
-                </div>
+                <label className="block font-semibold text-slate-700">Job Title</label>
+                <input required type="text" className="mt-1 w-full rounded-xl border border-slate-200 px-4 py-2.5 outline-none focus:border-slate-950" placeholder="e.g. Senior Go Developer" />
               </div>
               <div>
-                <label className="mb-1 block text-xs font-bold uppercase tracking-wider text-slate-700">Job Description</label>
-                <textarea required rows={4} placeholder="Describe the role responsibilities..." className="w-full rounded-xl border border-slate-200 p-3 text-sm outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20" />
+                <label className="block font-semibold text-slate-700">Company Name</label>
+                <input required type="text" className="mt-1 w-full rounded-xl border border-slate-200 px-4 py-2.5 outline-none focus:border-slate-950" placeholder="e.g. Vertex Labs" />
               </div>
-
-              <div className="mt-6 flex items-center justify-end gap-3 pt-4">
-                <button
-                  type="button"
-                  onClick={() => setIsPostJobOpen(false)}
-                  className="rounded-xl border border-slate-200 px-5 py-2.5 text-sm font-bold text-slate-600 transition hover:bg-slate-50"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  className="rounded-xl bg-slate-950 px-6 py-2.5 text-sm font-bold text-white transition hover:bg-blue-600"
-                >
+              <div>
+                <label className="block font-semibold text-slate-700">Location</label>
+                <input required type="text" className="mt-1 w-full rounded-xl border border-slate-200 px-4 py-2.5 outline-none focus:border-slate-950" placeholder="e.g. London, UK · Hybrid" />
+              </div>
+              <div>
+                <label className="block font-semibold text-slate-700">Salary Range</label>
+                <input required type="text" className="mt-1 w-full rounded-xl border border-slate-200 px-4 py-2.5 outline-none focus:border-slate-950" placeholder="e.g. £90k–£110k" />
+              </div>
+              <div className="pt-4">
+                <button type="submit" className="w-full rounded-xl bg-slate-950 py-3 font-bold text-white transition hover:bg-blue-600">
                   Publish Listing
                 </button>
               </div>
@@ -836,9 +746,9 @@ function HomeContent() {
   );
 }
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#f6f8fb]" />}>
+    <Suspense fallback={<div className="min-h-screen bg-[#f6f8fb] flex items-center justify-center font-bold text-slate-400">Loading OrbitHire...</div>}>
       <HomeContent />
     </Suspense>
   );
