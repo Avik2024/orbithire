@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# OrbitHire
 
-## Getting Started
+<p align="center">
+  <strong>A modern hiring platform that brings candidates and employers into one orbit.</strong>
+</p>
 
-First, run the development server:
+<p align="center">
+  Built with Laravel, PostgreSQL, Laravel Sanctum, and Next.js.
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+<p align="center">
+  <a href="#getting-started">Get started</a> ·
+  <a href="#architecture">Architecture</a> ·
+  <a href="#roadmap">Roadmap</a>
+</p>
+
+---
+
+## ✨ Overview
+
+OrbitHire is a full-stack job portal designed for two sides of the hiring journey: candidates discovering their next opportunity, and employers publishing roles and managing applications. Its API-first foundation keeps the platform flexible, testable, and ready for a dedicated Next.js experience.
+
+## 🎬 Product demo
+
+> Replace this link with your uploaded YouTube, Loom, or GitHub asset URL.
+
+[▶ Watch the OrbitHire walkthrough](https://youtu.be/vCqwULXGhgE)
+
+For the best README experience, use a short H.264 `.mp4` demo or host the full recording on YouTube/Loom. Add focused screenshots below to make the important screens immediately scannable.
+
+| Candidate experience | Employer experience |
+| --- | --- |
+| `docs/images/candidate-dashboard.png` | `docs/images/employer-dashboard.png` |
+
+<!-- Replace the two paths above with actual screenshots, then use:
+![Candidate dashboard](docs/images/candidate-dashboard.png)
+-->
+
+## 🚀 What OrbitHire enables
+
+- **Role-aware access** — focused candidate and employer journeys backed by secure authentication.
+- **Job discovery** — browse, search, and filter open positions.
+- **Application tracking** — submit applications and follow their status through the hiring process.
+- **Employer workflow** — create job posts and manage incoming candidates.
+- **Profile management** — maintain candidate and employer profiles in one consistent system.
+
+## 🧰 Tech stack
+
+| Layer | Technology |
+| --- | --- |
+| API | Laravel 11 · PHP 8.2 |
+| Database | PostgreSQL |
+| Authentication | Laravel Sanctum |
+| Web app | Next.js *(in progress)* |
+| Design approach | Repository + Service layers |
+
+## 🏗️ Architecture
+
+OrbitHire separates business rules from data access so that controllers remain thin and the API can evolve without tightly coupling application logic to the database.
+
+```text
+HTTP request
+    ↓
+Controller
+    ↓
+Service layer       ← business rules and workflows
+    ↓
+Repository layer    ← data-access boundary
+    ↓
+PostgreSQL
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```text
+orbithire/
+├── backend/        # Laravel REST API
+└── frontend/       # Next.js web application
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ⚙️ Getting started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
 
-## Learn More
+- PHP 8.2+
+- Composer
+- PostgreSQL
+- Node.js 20+ *(for the frontend, when available)*
 
-To learn more about Next.js, take a look at the following resources:
+### Backend
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+cd backend
+composer install
+cp .env.example .env
+php artisan key:generate
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Set the PostgreSQL connection in `.env`:
 
-## Deploy on Vercel
+```env
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=orbithire_db
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Then migrate the database and run the API:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+php artisan migrate
+php artisan serve
+```
+
+The API will be available at `http://127.0.0.1:8000` by default.
+
+### Frontend
+
+The Next.js client is currently under development. Its setup instructions will be added here once the first user-facing flows are ready.
+
+## 🗺️ Roadmap
+
+- [x] Laravel backend scaffolding
+- [x] PostgreSQL integration
+- [x] Sanctum authentication setup
+- [ ] Job and application database schema
+- [ ] Jobs, applications, and profile API endpoints
+- [ ] Next.js frontend
+- [ ] Deployment and production configuration
+
+## 🤝 Contributing
+
+Contributions, ideas, and bug reports are welcome. Please open an issue to discuss substantial changes before submitting a pull request.
+
+## 👤 Author
+
+Built by [Avik Mukherjee](https://github.com/Avik2024).
