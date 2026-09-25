@@ -34,17 +34,18 @@ const jobs: Job[] = [
     posted: "2h ago",
     tags: ["Go", "Kubernetes", "AWS"],
     featured: true,
-    description: "Vertex Labs is building next-generation distributed infrastructure. We are looking for a Senior Backend Engineer to lead the architecture of high-throughput Go services.",
+    description:
+      "Vertex Labs is building next-generation distributed infrastructure. We are looking for a Senior Backend Engineer to lead the architecture of high-throughput Go services.",
     responsibilities: [
       "Design and maintain microservices in Go running on Kubernetes",
       "Optimize data pipelines and database queries for low latency",
-      "Collaborate with security and DevOps teams on AWS cloud primitives"
+      "Collaborate with security and DevOps teams on AWS cloud primitives",
     ],
     requirements: [
       "5+ years of software engineering experience with Go or C++",
       "Solid understanding of Kubernetes, Docker, and CI/CD pipelines",
-      "Experience with distributed caching and message brokers (Kafka/RabbitMQ)"
-    ]
+      "Experience with distributed caching and message brokers (Kafka/RabbitMQ)",
+    ],
   },
   {
     id: 2,
@@ -58,17 +59,18 @@ const jobs: Job[] = [
     posted: "5h ago",
     tags: ["Figma", "Design Systems", "Research"],
     featured: true,
-    description: "Northstar simplifies complex workflows for modern teams. We are seeking a Product Designer to shape core platform UI/UX and enhance our enterprise design system.",
+    description:
+      "Northstar simplifies complex workflows for modern teams. We are seeking a Product Designer to shape core platform UI/UX and enhance our enterprise design system.",
     responsibilities: [
       "Create high-fidelity interactive prototypes and design specs in Figma",
       "Conduct user interviews and turn qualitative feedback into product features",
-      "Work closely with frontend engineers to ensure pixel-perfect execution"
+      "Work closely with frontend engineers to ensure pixel-perfect execution",
     ],
     requirements: [
       "3+ years in product/UI design for web applications",
       "Proven track record of scaling reusable component libraries",
-      "Strong portfolio showcasing end-to-end design workflows"
-    ]
+      "Strong portfolio showcasing end-to-end design workflows",
+    ],
   },
   {
     id: 3,
@@ -81,17 +83,18 @@ const jobs: Job[] = [
     salary: "€100k–€135k",
     posted: "7h ago",
     tags: ["Python", "PyTorch", "MLOps"],
-    description: "Axiom AI develops specialized foundation models for scientific discovery. Join us to optimize model serving pipelines and scale training workflows.",
+    description:
+      "Axiom AI develops specialized foundation models for scientific discovery. Join us to optimize model serving pipelines and scale training workflows.",
     responsibilities: [
       "Optimize LLM inference latency using vLLM, SGLang, and custom CUDA kernels",
       "Deploy scalable model endpoint serving layers on Kubernetes clusters",
-      "Monitor model drift, latency metrics, and hardware utilization"
+      "Monitor model drift, latency metrics, and hardware utilization",
     ],
     requirements: [
       "4+ years of production experience in Python and PyTorch",
       "Hands-on experience with GPU profiling and inference acceleration",
-      "Background in computer science, robotics, or computational fields"
-    ]
+      "Background in computer science, robotics, or computational fields",
+    ],
   },
   {
     id: 4,
@@ -104,17 +107,18 @@ const jobs: Job[] = [
     salary: "€65k–€85k",
     posted: "1d ago",
     tags: ["React", "TypeScript", "Next.js"],
-    description: "Pulse Commerce powers ultra-fast headless storefronts. We need a Frontend Engineer with deep React and Web Performance expertise.",
+    description:
+      "Pulse Commerce powers ultra-fast headless storefronts. We need a Frontend Engineer with deep React and Web Performance expertise.",
     responsibilities: [
       "Develop responsive Next.js application components with TypeScript",
       "Optimize Core Web Vitals and client-side rendering bottlenecks",
-      "Maintain clean dynamic state workflows with minimal re-renders"
+      "Maintain clean dynamic state workflows with minimal re-renders",
     ],
     requirements: [
       "3+ years of experience building modern React web applications",
       "Deep understanding of TypeScript, Tailwind CSS, and Next.js App Router",
-      "Familiarity with state management strategies and web accessibility (a11y)"
-    ]
+      "Familiarity with state management strategies and web accessibility (a11y)",
+    ],
   },
   {
     id: 5,
@@ -127,17 +131,18 @@ const jobs: Job[] = [
     salary: "CHF 120k–150k",
     posted: "1d ago",
     tags: ["GCP", "Terraform", "Zero Trust"],
-    description: "Sentinel One provides advanced cloud infrastructure protection. You will architect zero-trust boundaries and automated security pipelines.",
+    description:
+      "Sentinel One provides advanced cloud infrastructure protection. You will architect zero-trust boundaries and automated security pipelines.",
     responsibilities: [
       "Implement Infrastructure as Code (IaC) using Terraform with strict security controls",
       "Audit cloud configurations across GCP and AWS environments",
-      "Automate vulnerability detection and secret management workflows"
+      "Automate vulnerability detection and secret management workflows",
     ],
     requirements: [
       "5+ years in Cloud Infrastructure & Cyber Security engineering",
       "Strong proficiency in Terraform, Python, and GCP security primitives",
-      "Relevant certifications (CISSP, Google Professional Cloud Security Engineer) are a plus"
-    ]
+      "Relevant certifications (CISSP, Google Professional Cloud Security Engineer) are a plus",
+    ],
   },
   {
     id: 6,
@@ -150,18 +155,19 @@ const jobs: Job[] = [
     salary: "€75k–€95k",
     posted: "2d ago",
     tags: ["B2B SaaS", "API", "Roadmaps"],
-    description: "BrightPay is modernizing global payroll processing. We are looking for a TPM to own developer platform APIs and external integrations.",
+    description:
+      "BrightPay is modernizing global payroll processing. We are looking for a TPM to own developer platform APIs and external integrations.",
     responsibilities: [
       "Define developer documentation, public API schemas, and platform roadmaps",
       "Translate business requirements into detailed technical user stories",
-      "Work directly with core engineering teams to track sprint delivery"
+      "Work directly with core engineering teams to track sprint delivery",
     ],
     requirements: [
       "3+ years of technical product management experience in B2B SaaS",
       "Ability to read API contracts, JSON schemas, and architectural diagrams",
-      "Strong communication skills with cross-functional stakeholders"
-    ]
-  }
+      "Strong communication skills with cross-functional stakeholders",
+    ],
+  },
 ];
 
 const companies = ["Vertex Labs", "Axiom AI", "Pulse Commerce", "Northstar", "BrightPay", "Sentinel One"];
@@ -176,23 +182,75 @@ function Icon({ name, className = "h-5 w-5" }: { name: string; className?: strin
   };
 
   const paths: Record<string, React.ReactNode> = {
-    search: <><circle cx="11" cy="11" r="7" {...common} /><path d="m20 20-4-4" {...common} /></>,
-    pin: <><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" {...common} /><circle cx="12" cy="10" r="2.5" {...common} /></>,
-    briefcase: <><rect x="3" y="6" width="18" height="13" rx="2" {...common} /><path d="M8 6V4.5A1.5 1.5 0 0 1 9.5 3h5A1.5 1.5 0 0 1 16 4.5V6M3 11h18M10 11v3h4v-3" {...common} /></>,
-    spark: <><path d="m12 3 1.5 5.5L19 10l-5.5 1.5L12 17l-1.5-5.5L5 10l5.5-1.5L12 3Z" {...common} /><path d="m19 16 .7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7L19 16Z" {...common} /></>,
-    arrow: <><path d="M5 12h14" {...common} /><path d="m13 6 6 6-6 6" {...common} /></>,
+    search: (
+      <>
+        <circle cx="11" cy="11" r="7" {...common} />
+        <path d="m20 20-4-4" {...common} />
+      </>
+    ),
+    pin: (
+      <>
+        <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" {...common} />
+        <circle cx="12" cy="10" r="2.5" {...common} />
+      </>
+    ),
+    briefcase: (
+      <>
+        <rect x="3" y="6" width="18" height="13" rx="2" {...common} />
+        <path d="M8 6V4.5A1.5 1.5 0 0 1 9.5 3h5A1.5 1.5 0 0 1 16 4.5V6M3 11h18M10 11v3h4v-3" {...common} />
+      </>
+    ),
+    spark: (
+      <>
+        <path d="m12 3 1.5 5.5L19 10l-5.5 1.5L12 17l-1.5-5.5L5 10l5.5-1.5L12 3Z" {...common} />
+        <path d="m19 16 .7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7L19 16Z" {...common} />
+      </>
+    ),
+    arrow: (
+      <>
+        <path d="M5 12h14" {...common} />
+        <path d="m13 6 6 6-6 6" {...common} />
+      </>
+    ),
     chevron: <path d="m7 10 5 5 5-5" {...common} />,
-    heart: <path d="M20.8 8.6c0 5.6-8.8 10.1-8.8 10.1S3.2 14.2 3.2 8.6a4.6 4.6 0 0 1 8.8-1.8 4.6 4.6 0 0 1 8.8 1.8Z" {...common} />,
-    bell: <><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" {...common} /><path d="M10 21h4" {...common} /></>,
-    menu: <><path d="M4 7h16M4 12h16M4 17h16" {...common} /></>,
+    heart: (
+      <path
+        d="M20.8 8.6c0 5.6-8.8 10.1-8.8 10.1S3.2 14.2 3.2 8.6a4.6 4.6 0 0 1 8.8-1.8 4.6 4.6 0 0 1 8.8 1.8Z"
+        {...common}
+      />
+    ),
+    bell: (
+      <>
+        <path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" {...common} />
+        <path d="M10 21h4" {...common} />
+      </>
+    ),
+    menu: (
+      <>
+        <path d="M4 7h16M4 12h16M4 17h16" {...common} />
+      </>
+    ),
     check: <path d="m5 12 4 4L19 6" {...common} />,
     close: <path d="M18 6L6 18M6 6l12 12" {...common} />,
-    filter: <><path d="M4 6h16M7 12h10M10 18h4" {...common} /></>,
-    user: <><circle cx="12" cy="8" r="4" {...common} /><path d="M4 21c.7-4 3.3-6 8-6s7.3 2 8 6" {...common} /></>,
+    filter: (
+      <>
+        <path d="M4 6h16M7 12h10M10 18h4" {...common} />
+      </>
+    ),
+    user: (
+      <>
+        <circle cx="12" cy="8" r="4" {...common} />
+        <path d="M4 21c.7-4 3.3-6 8-6s7.3 2 8 6" {...common} />
+      </>
+    ),
   };
 
   if (!paths[name]) return null;
-  return <svg viewBox="0 0 24 24" aria-hidden className={className}>{paths[name]}</svg>;
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden className={className}>
+      {paths[name]}
+    </svg>
+  );
 }
 
 function HomeContent() {
@@ -260,7 +318,9 @@ function HomeContent() {
         <div className="mx-auto flex h-16 max-w-7xl items-center gap-6 px-5 lg:px-8">
           <Link href="/" className="flex shrink-0 items-center gap-2.5" aria-label="OrbitHire home">
             <span className="grid h-10 w-10 place-items-center rounded-xl bg-slate-950 text-white shadow-lg shadow-slate-950/10">
-              <span className="text-xl font-black tracking-[-0.08em]">O<span className="text-cyan-400">.</span></span>
+              <span className="text-xl font-black tracking-[-0.08em]">
+                O<span className="text-cyan-400">.</span>
+              </span>
             </span>
             <span className="text-xl font-extrabold tracking-tight">orbithire</span>
           </Link>
@@ -292,7 +352,10 @@ function HomeContent() {
             >
               Post a job
             </button>
-            <button className="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 text-slate-700 md:hidden" aria-label="Open menu">
+            <button
+              className="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 text-slate-700 md:hidden"
+              aria-label="Open menu"
+            >
               <Icon name="menu" />
             </button>
           </div>
@@ -309,10 +372,14 @@ function HomeContent() {
                 <span className="h-2 w-2 rounded-full bg-cyan-500" /> 18,492 new roles this week
               </div>
               <h1 className="max-w-4xl text-5xl font-black leading-[0.98] tracking-[-0.055em] sm:text-6xl lg:text-7xl">
-                Find work that <span className="bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 bg-clip-text text-transparent">fits your ambition.</span>
+                Find work that{" "}
+                <span className="bg-gradient-to-r from-cyan-500 via-blue-600 to-violet-600 bg-clip-text text-transparent">
+                  fits your ambition.
+                </span>
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-                OrbitHire connects exceptional people with high-impact teams. Search smarter, match faster, and build a career you actually want.
+                OrbitHire connects exceptional people with high-impact teams. Search smarter, match faster, and build a
+                career you actually want.
               </p>
 
               <div className="mt-9 rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_20px_70px_-30px_rgba(15,23,42,.28)] sm:p-2.5">
@@ -366,15 +433,21 @@ function HomeContent() {
                       <p className="mt-4 text-2xl font-black">98% fit</p>
                       <p className="mt-1 text-sm text-slate-400">Senior Backend Engineer</p>
                     </div>
-                    <span className="grid h-11 w-11 place-items-center rounded-xl bg-white/10 text-sm font-black">VL</span>
+                    <span className="grid h-11 w-11 place-items-center rounded-xl bg-white/10 text-sm font-black">
+                      VL
+                    </span>
                   </div>
                   <div className="mt-7 h-2 rounded-full bg-white/10">
                     <div className="h-full w-[98%] rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" />
                   </div>
                   <div className="mt-6 grid grid-cols-2 gap-3">
                     {["Go", "System design", "Cloud", "Leadership"].map((skill) => (
-                      <div key={skill} className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-300">
-                        <span className="mr-1.5 text-emerald-300">✓</span>{skill}
+                      <div
+                        key={skill}
+                        className="rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-slate-300"
+                      >
+                        <span className="mr-1.5 text-emerald-300">✓</span>
+                        {skill}
                       </div>
                     ))}
                   </div>
@@ -393,7 +466,13 @@ function HomeContent() {
                   ))}
                 </div>
                 <div className="mt-3 flex justify-between text-[10px] font-semibold text-slate-400">
-                  <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+                  <span>M</span>
+                  <span>T</span>
+                  <span>W</span>
+                  <span>T</span>
+                  <span>F</span>
+                  <span>S</span>
+                  <span>S</span>
                 </div>
               </div>
             </div>
@@ -406,7 +485,9 @@ function HomeContent() {
             <div className="flex flex-wrap items-center justify-between gap-5">
               <p className="text-xs font-bold uppercase tracking-[0.22em] text-slate-400">Trusted by teams at</p>
               <div className="flex flex-wrap items-center gap-x-9 gap-y-4 text-sm font-extrabold tracking-tight text-slate-500">
-                {companies.map((company) => <span key={company}>{company}</span>)}
+                {companies.map((company) => (
+                  <span key={company}>{company}</span>
+                ))}
               </div>
             </div>
           </div>
@@ -420,7 +501,9 @@ function HomeContent() {
                 <span className="h-1.5 w-5 rounded-full bg-cyan-500" /> CURATED FOR YOU
               </div>
               <h2 className="text-3xl font-black tracking-tight sm:text-4xl">Opportunities worth your time</h2>
-              <p className="mt-3 max-w-2xl text-slate-600">High-signal roles from product-led companies, growth-stage startups, and global technology teams.</p>
+              <p className="mt-3 max-w-2xl text-slate-600">
+                High-signal roles from product-led companies, growth-stage startups, and global technology teams.
+              </p>
             </div>
             <a href="#find-jobs" className="inline-flex items-center gap-2 text-sm font-bold text-slate-950">
               View all jobs <Icon name="arrow" className="h-4 w-4" />
@@ -475,12 +558,20 @@ function HomeContent() {
                       </div>
                     </div>
                     <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs font-semibold text-slate-500">
-                      <span className="inline-flex items-center gap-1.5"><Icon name="pin" className="h-3.5 w-3.5" />{job.location}</span>
-                      <span className="inline-flex items-center gap-1.5"><Icon name="briefcase" className="h-3.5 w-3.5" />{job.type}</span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <Icon name="pin" className="h-3.5 w-3.5" />
+                        {job.location}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <Icon name="briefcase" className="h-3.5 w-3.5" />
+                        {job.type}
+                      </span>
                     </div>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {job.tags.map((tag) => (
-                        <span key={tag} className="rounded-lg bg-slate-100 px-2.5 py-1.5 text-xs font-bold text-slate-600">{tag}</span>
+                        <span key={tag} className="rounded-lg bg-slate-100 px-2.5 py-1.5 text-xs font-bold text-slate-600">
+                          {tag}
+                        </span>
                       ))}
                     </div>
                     <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
@@ -529,15 +620,18 @@ function HomeContent() {
               <div className="mb-4 flex items-center gap-2 text-sm font-bold text-cyan-300">
                 <Icon name="spark" className="h-4 w-4" /> ORBITHIRE INTELLIGENCE
               </div>
-              <h2 className="text-3xl font-black tracking-tight sm:text-5xl">Your next role should match more than your keywords.</h2>
+              <h2 className="text-3xl font-black tracking-tight sm:text-5xl">
+                Your next role should match more than your keywords.
+              </h2>
               <p className="mt-5 max-w-2xl text-base leading-7 text-slate-400">
-                Build a profile once. OrbitHire scores your experience, skills, seniority, preferences, and goals against live roles to surface the opportunities with the strongest potential.
+                Build a profile once. OrbitHire scores your experience, skills, seniority, preferences, and goals
+                against live roles to surface the opportunities with the strongest potential.
               </p>
               <div className="mt-7 grid max-w-2xl gap-3 sm:grid-cols-3">
                 {[
                   ["98%", "match confidence"],
                   ["4.7×", "more relevant roles"],
-                  ["12 min", "to build profile"]
+                  ["12 min", "to build profile"],
                 ].map(([value, label]) => (
                   <div key={label} className="rounded-2xl border border-white/10 bg-white/5 p-4">
                     <p className="text-2xl font-black">{value}</p>
@@ -559,22 +653,43 @@ function HomeContent() {
         <section id="companies" className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="rounded-3xl bg-slate-100 p-7 sm:p-8">
-              <span className="inline-flex rounded-xl bg-white p-3 text-slate-950 shadow-sm"><Icon name="briefcase" /></span>
+              <span className="inline-flex rounded-xl bg-white p-3 text-slate-950 shadow-sm">
+                <Icon name="briefcase" />
+              </span>
               <h3 className="mt-6 text-xl font-black">For candidates</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-600">Discover roles aligned with your strengths, not just your current title. Track applications and save the teams you want to join.</p>
-              <a href="#find-jobs" className="mt-7 inline-flex items-center gap-2 text-sm font-black">Explore jobs <Icon name="arrow" className="h-4 w-4" /></a>
+              <p className="mt-3 text-sm leading-6 text-slate-600">
+                Discover roles aligned with your strengths, not just your current title. Track applications and save
+                the teams you want to join.
+              </p>
+              <a href="#find-jobs" className="mt-7 inline-flex items-center gap-2 text-sm font-black">
+                Explore jobs <Icon name="arrow" className="h-4 w-4" />
+              </a>
             </div>
             <div className="rounded-3xl bg-blue-600 p-7 text-white sm:p-8">
-              <span className="inline-flex rounded-xl bg-white/15 p-3"><Icon name="user" /></span>
+              <span className="inline-flex rounded-xl bg-white/15 p-3">
+                <Icon name="user" />
+              </span>
               <h3 className="mt-6 text-xl font-black">For hiring teams</h3>
-              <p className="mt-3 text-sm leading-6 text-blue-100">Meet qualified candidates faster with structured profiles, intent signals, and a focused pipeline your recruiters will actually use.</p>
-              <button onClick={() => setIsPostJobOpen(true)} className="mt-7 inline-flex items-center gap-2 text-sm font-black">Explore employer tools <Icon name="arrow" className="h-4 w-4" /></button>
+              <p className="mt-3 text-sm leading-6 text-blue-100">
+                Meet qualified candidates faster with structured profiles, intent signals, and a focused pipeline your
+                recruiters will actually use.
+              </p>
+              <button onClick={() => setIsPostJobOpen(true)} className="mt-7 inline-flex items-center gap-2 text-sm font-black">
+                Explore employer tools <Icon name="arrow" className="h-4 w-4" />
+              </button>
             </div>
             <div className="rounded-3xl bg-slate-950 p-7 text-white sm:p-8">
-              <span className="inline-flex rounded-xl bg-white/10 p-3 text-cyan-300"><Icon name="spark" /></span>
+              <span className="inline-flex rounded-xl bg-white/10 p-3 text-cyan-300">
+                <Icon name="spark" />
+              </span>
               <h3 className="mt-6 text-xl font-black">For your growth</h3>
-              <p className="mt-3 text-sm leading-6 text-slate-400">Salary benchmarks, interview preparation, career guides, and skill signals that help you make better moves.</p>
-              <button className="mt-7 inline-flex items-center gap-2 text-sm font-black">Open career hub <Icon name="arrow" className="h-4 w-4" /></button>
+              <p className="mt-3 text-sm leading-6 text-slate-400">
+                Salary benchmarks, interview preparation, career guides, and skill signals that help you make better
+                moves.
+              </p>
+              <button className="mt-7 inline-flex items-center gap-2 text-sm font-black">
+                Open career hub <Icon name="arrow" className="h-4 w-4" />
+              </button>
             </div>
           </div>
         </section>
@@ -585,7 +700,9 @@ function HomeContent() {
             <div>
               <div className="mb-4 text-sm font-bold text-blue-600">SALARY INSIGHTS</div>
               <h2 className="text-3xl font-black tracking-tight sm:text-4xl">Know your market value.</h2>
-              <p className="mt-4 max-w-xl text-slate-600">Compare compensation by role, seniority, location, and company type before you negotiate your next offer.</p>
+              <p className="mt-4 max-w-xl text-slate-600">
+                Compare compensation by role, seniority, location, and company type before you negotiate your next offer.
+              </p>
               <Link
                 href="/salary-insights"
                 className="mt-7 inline-block rounded-xl bg-slate-950 px-5 py-3 text-sm font-black text-white transition hover:bg-blue-600"
@@ -596,18 +713,27 @@ function HomeContent() {
             <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
               <div className="flex items-end justify-between">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Senior Software Engineer · London</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                    Senior Software Engineer · London
+                  </p>
                   <p className="mt-2 text-3xl font-black">£105,000</p>
                 </div>
-                <span className="rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-black text-emerald-700">+8.2% YoY</span>
+                <span className="rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-black text-emerald-700">
+                  +8.2% YoY
+                </span>
               </div>
               <div className="mt-8 flex h-44 items-end gap-3">
                 {[35, 48, 44, 63, 57, 76, 68, 88, 80, 95].map((h, i) => (
                   <div key={i} className="flex-1 rounded-t-xl bg-gradient-to-t from-blue-700 to-cyan-400" style={{ height: `${h}%` }} />
                 ))}
               </div>
-              <div className="mt-3 flex justify-between text-[10px] font-semibold text-slate-400">
-                <span>2024</span><span>2025</span><span>2026</span>
+              <div className="mt-4 flex justify-between text-xs font-semibold text-slate-400 border-t border-slate-200/60 pt-3">
+                <span>2021</span>
+                <span>2022</span>
+                <span>2023</span>
+                <span>2024</span>
+                <span>2025</span>
+                <span>2026</span>
               </div>
             </div>
           </div>
@@ -615,87 +741,97 @@ function HomeContent() {
       </main>
 
       {/* FOOTER */}
-      <footer className="border-t border-slate-200 bg-white text-xs font-semibold text-slate-500">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row lg:px-8">
-          <p>© {new Date().getFullYear()} OrbitHire. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-slate-950">Privacy Policy</a>
-            <a href="#" className="hover:text-slate-950">Terms of Service</a>
-            <a href="#" className="hover:text-slate-950">Cookies</a>
+      <footer className="border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-12 lg:px-8">
+          <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+            <div className="flex items-center gap-2">
+              <span className="grid h-8 w-8 place-items-center rounded-lg bg-slate-950 text-white font-black text-xs">
+                O.
+              </span>
+              <span className="font-extrabold text-slate-900">orbithire</span>
+            </div>
+            <p className="text-xs text-slate-500">© 2026 OrbitHire Inc. All rights reserved.</p>
           </div>
         </div>
       </footer>
 
-      {/* JOB DETAIL MODAL */}
+      {/* JOB DETAILS MODAL */}
       {selectedJob && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-sm">
-          <div className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-white p-6 shadow-2xl sm:p-8">
-            <div className="flex items-start justify-between gap-4">
-              <div className="flex items-center gap-4">
-                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-slate-950 text-base font-black text-white">
-                  {selectedJob.logo}
-                </div>
-                <div>
-                  <h3 className="text-xl font-extrabold text-slate-950">{selectedJob.title}</h3>
-                  <p className="text-sm font-semibold text-slate-500">{selectedJob.company}</p>
-                </div>
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-sm"
+          onClick={() => setSelectedJob(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-white p-6 shadow-2xl sm:p-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedJob(null)}
+              className="absolute right-6 top-6 grid h-9 w-9 place-items-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200"
+              aria-label="Close modal"
+            >
+              <Icon name="close" />
+            </button>
+
+            <div className="flex items-center gap-4">
+              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-slate-950 text-base font-black text-white">
+                {selectedJob.logo}
               </div>
+              <div>
+                <h2 className="text-xl font-black text-slate-950 sm:text-2xl">{selectedJob.title}</h2>
+                <p className="text-sm font-bold text-slate-500">{selectedJob.company}</p>
+              </div>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-4 border-y border-slate-100 py-4 text-xs font-semibold text-slate-600">
+              <span>📍 {selectedJob.location}</span>
+              <span>💼 {selectedJob.type}</span>
+              <span>💰 {selectedJob.salary}</span>
+            </div>
+
+            <div className="mt-6 space-y-6">
+              <div>
+                <h3 className="text-sm font-bold text-slate-950">About the role</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{selectedJob.description}</p>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-bold text-slate-950">Responsibilities</h3>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-600">
+                  {selectedJob.responsibilities.map((resp, idx) => (
+                    <li key={idx}>{resp}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-bold text-slate-950">Requirements</h3>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-600">
+                  {selectedJob.requirements.map((req, idx) => (
+                    <li key={idx}>{req}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-8 flex items-center justify-end gap-3 border-t border-slate-100 pt-5">
               <button
                 onClick={() => setSelectedJob(null)}
-                className="grid h-9 w-9 place-items-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200"
+                className="rounded-xl border border-slate-200 px-5 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-50"
               >
-                <Icon name="close" className="h-5 w-5" />
+                Close
               </button>
-            </div>
-
-            <div className="mt-6 flex flex-wrap gap-4 text-xs font-semibold text-slate-600">
-              <span className="rounded-lg bg-slate-100 px-3 py-1.5">{selectedJob.location}</span>
-              <span className="rounded-lg bg-slate-100 px-3 py-1.5">{selectedJob.type}</span>
-              <span className="rounded-lg bg-slate-100 px-3 py-1.5">{selectedJob.salary}</span>
-            </div>
-
-            <div className="mt-6 space-y-6 text-sm">
-              <div>
-                <h4 className="font-bold text-slate-950">Description</h4>
-                <p className="mt-2 leading-relaxed text-slate-600">{selectedJob.description}</p>
-              </div>
-
-              <div>
-                <h4 className="font-bold text-slate-950">Responsibilities</h4>
-                <ul className="mt-2 list-disc space-y-1.5 pl-5 text-slate-600">
-                  {selectedJob.responsibilities.map((resp, i) => (
-                    <li key={i}>{resp}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="font-bold text-slate-950">Requirements</h4>
-                <ul className="mt-2 list-disc space-y-1.5 pl-5 text-slate-600">
-                  {selectedJob.requirements.map((req, i) => (
-                    <li key={i}>{req}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="mt-8 flex gap-3 border-t border-slate-100 pt-6">
               <button
                 onClick={() => handleApply(selectedJob.id)}
-                disabled={appliedJobs.includes(selectedJob.id)}
-                className={`flex-1 rounded-xl py-3 text-sm font-bold text-white transition ${
+                className={`rounded-xl px-5 py-2.5 text-xs font-bold text-white transition ${
                   appliedJobs.includes(selectedJob.id)
                     ? "bg-emerald-600"
                     : "bg-slate-950 hover:bg-blue-600"
                 }`}
               >
                 {appliedJobs.includes(selectedJob.id) ? "Applied ✓" : "Apply now"}
-              </button>
-              <button
-                onClick={(e) => toggleSaved(selectedJob.id, e)}
-                className="rounded-xl border border-slate-200 px-4 text-slate-700 hover:bg-slate-50"
-              >
-                <Icon name="heart" className={saved.includes(selectedJob.id) ? "fill-cyan-500 text-cyan-500" : ""} />
               </button>
             </div>
           </div>
@@ -704,38 +840,60 @@ function HomeContent() {
 
       {/* POST A JOB MODAL */}
       {isPostJobOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-sm">
-          <div className="w-full max-w-lg rounded-3xl bg-white p-6 shadow-2xl sm:p-8">
-            <div className="flex items-center justify-between">
-              <h3 className="text-xl font-extrabold text-slate-950">Post a New Job</h3>
-              <button
-                onClick={() => setIsPostJobOpen(false)}
-                className="grid h-9 w-9 place-items-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200"
-              >
-                <Icon name="close" className="h-5 w-5" />
-              </button>
-            </div>
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 p-4 backdrop-blur-sm"
+          onClick={() => setIsPostJobOpen(false)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="relative w-full max-w-lg rounded-3xl bg-white p-6 shadow-2xl sm:p-8"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setIsPostJobOpen(false)}
+              className="absolute right-6 top-6 grid h-9 w-9 place-items-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200"
+              aria-label="Close modal"
+            >
+              <Icon name="close" />
+            </button>
+            <h2 className="text-2xl font-black text-slate-950">Post a New Job</h2>
+            <p className="mt-1 text-xs text-slate-500">Reach thousands of tech professionals today.</p>
 
-            <form onSubmit={(e) => { e.preventDefault(); setIsPostJobOpen(false); }} className="mt-6 space-y-4 text-sm">
+            <form onSubmit={(e) => { e.preventDefault(); setIsPostJobOpen(false); }} className="mt-6 space-y-4">
               <div>
-                <label className="block font-semibold text-slate-700">Job Title</label>
-                <input required type="text" className="mt-1 w-full rounded-xl border border-slate-200 px-4 py-2.5 outline-none focus:border-slate-950" placeholder="e.g. Senior Go Developer" />
+                <label className="block text-xs font-bold text-slate-700">Job Title</label>
+                <input
+                  required
+                  type="text"
+                  placeholder="e.g. Senior Frontend Engineer"
+                  className="mt-1 w-full rounded-xl border border-slate-200 px-3.5 py-2.5 text-sm outline-none focus:border-slate-950"
+                />
               </div>
               <div>
-                <label className="block font-semibold text-slate-700">Company Name</label>
-                <input required type="text" className="mt-1 w-full rounded-xl border border-slate-200 px-4 py-2.5 outline-none focus:border-slate-950" placeholder="e.g. Vertex Labs" />
+                <label className="block text-xs font-bold text-slate-700">Company Name</label>
+                <input
+                  required
+                  type="text"
+                  placeholder="e.g. Acme Corp"
+                  className="mt-1 w-full rounded-xl border border-slate-200 px-3.5 py-2.5 text-sm outline-none focus:border-slate-950"
+                />
               </div>
               <div>
-                <label className="block font-semibold text-slate-700">Location</label>
-                <input required type="text" className="mt-1 w-full rounded-xl border border-slate-200 px-4 py-2.5 outline-none focus:border-slate-950" placeholder="e.g. London, UK · Hybrid" />
-              </div>
-              <div>
-                <label className="block font-semibold text-slate-700">Salary Range</label>
-                <input required type="text" className="mt-1 w-full rounded-xl border border-slate-200 px-4 py-2.5 outline-none focus:border-slate-950" placeholder="e.g. £90k–£110k" />
+                <label className="block text-xs font-bold text-slate-700">Location</label>
+                <input
+                  required
+                  type="text"
+                  placeholder="e.g. Remote / New York, NY"
+                  className="mt-1 w-full rounded-xl border border-slate-200 px-3.5 py-2.5 text-sm outline-none focus:border-slate-950"
+                />
               </div>
               <div className="pt-4">
-                <button type="submit" className="w-full rounded-xl bg-slate-950 py-3 font-bold text-white transition hover:bg-blue-600">
-                  Publish Listing
+                <button
+                  type="submit"
+                  className="w-full rounded-xl bg-slate-950 py-3 text-sm font-bold text-white transition hover:bg-blue-600"
+                >
+                  Submit Job Listing
                 </button>
               </div>
             </form>
@@ -746,9 +904,9 @@ function HomeContent() {
   );
 }
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#f6f8fb] flex items-center justify-center font-bold text-slate-400">Loading OrbitHire...</div>}>
+    <Suspense fallback={<div className="min-h-screen bg-[#f6f8fb]" />}>
       <HomeContent />
     </Suspense>
   );
