@@ -1,16 +1,68 @@
 "use client";
 
-import { useState } from "react";
-import { MOCK_USER } from "@/data/users";
-import { User } from "@/types/user";
+import { useState, useEffect, useCallback } from "react";
+import { User, UserAuthSession } from "@/types/user";
+import {
+  getAuthSession,
+  setAuthSession,
+  clearAuthSession,
+} from "@/lib/auth";
 
-export function useAuth() {
-  const [user] = useState<User | null>(MOCK_USER);
-  const [loading] = useState<boolean>(false);
+export interface UseAuthReturn {
+  user: User | null;
+  token: string | null;
+  isAuthenticated: boolean;
+  isLoading: boolean;
+  login: (user: User, token: string) => void;
+  logout: () => void;
+  refreshSession: () => void;
+}
+
+export function useAuth(): UseAuthReturn {
+  const [session, setSession] = useState<UserAuthSession>({
+    user: null,
+    token: undefined,
+    isAuthenticated: false,
+  });
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  // Initialize and read auth state on initial mount
+  useEffect(() => {
+    const currentSession = getAuthSession();
+    setSession(currentSession);
+    setIsLoading(false);
+  }, []);
+
+  const login = useCallback((user: User, token: string) => {
+    setAuthSession(user, token);
+    setSession({
+      user,
+      token,
+      isAuthenticated: true,
+    });
+  }, []);
+
+  const logout = useCallback(() => {
+    clearAuthSession();
+    setSession({
+      user: null,
+      token: undefined,
+      isAuthenticated: false,
+    });
+  }, []);
+
+  const refreshSession = useCallback(() => {
+    const currentSession = getAuthSession();
+    setSession(currentSession);
+  }, []);
 
   return {
-    user,
-    loading,
-    isAuthenticated: !!user,
+    user: session.user,
+    token: session.token || null,
+    isAuthenticated: session.isAuthenticated,
+    isLoading,
+    login,
+    logout,
+    refreshSession,
   };
 }
